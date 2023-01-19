@@ -1,0 +1,26 @@
+.profile_card{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: #fff; */
+    background-clip: border-box;
+    border-radius: .25rem;
+    background: #081624;
+    -webkit-box-shadow: 0 0 9px 3px rgb(226 30 228 / 24%);
+    box-shadow: 0 0 9px 3px rgb(226 30 228 / 24%);
+}
+.social {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    /* background-color: #fff; */
+    border: 1px solid rgba(0,0,0,.125);
+}
+.margin_own{
+    margin-bottom: 10px;
+}

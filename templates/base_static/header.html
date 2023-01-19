@@ -1,0 +1,48 @@
+{% load static %}
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-warp">
+			<div class="header-social d-flex justify-content-end">
+				<p>Follow us:</p>
+				<a href="#"><i class="fa fa-pinterest"></i></a>
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="#"><i class="fa fa-behance"></i></a>
+			</div>
+			<div class="header-bar-warp d-flex">
+				<!-- site logo -->
+				<a href="{% url "Index" %}" class="site-logo">
+					<img src="{% static './img/logo.png'%}" alt="">
+				</a>
+				<nav class="top-nav-area w-100">
+                    {% if request.user.is_authenticated %}
+                        <div class="user-panel">
+						    <a href="{% url "Profile-detail" request.user.profile.id  %}"> {{ request.user.username }}</a>
+					    </div>
+                    {% else %}
+					    <div class="user-panel">
+						    <a href="{% url "Login" %}">Login</a> / <a href="{% url "SignUp" %}">Register</a>
+					    </div>
+                    {% endif %}
+					<!-- Menu -->
+					<ul class="main-menu primary-menu">
+						<li><a href="{% url "Index" %}">Home</a></li>
+						<li><a href="{% url "GameListUrl" %}">Games</a>
+							<ul class="sub-menu">
+								<li><a href="{% url "Index" %}">Game Singel</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url "PostListView" %}">Reviews</a></li>
+						<li><a href="{% url "Index" %}">News</a></li>
+						<li><a href="{% url "Index" %}">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
