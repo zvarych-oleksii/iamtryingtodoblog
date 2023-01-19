@@ -31,10 +31,6 @@ class ProfileChangeDetail(FormMixin, DetailView):
         if profile_form.is_valid() and user_form.is_valid():
             user_form.save(commit=False)
             profile_form.save(commit=False)
-            print(user_form.cleaned_data.get("username"))
-            print(profile_form.cleaned_data.get("last_name"))
-            print(profile_form.cleaned_data.get("first_name"))
-            print(profile_form.cleaned_data.get("avatar"))
         else:
             print("FormIsInvalid")
         return redirect("Index")
