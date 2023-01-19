@@ -25,7 +25,6 @@ class ProfileChangeDetail(FormMixin, DetailView):
                         "form_profile": ProfileChangeForm(initial=self.request.user.profile.get_initial_date())})
         return context
     def post(self, request, *args, **kwargs):
-        print("helllo")
         user_form = ChangeUserForm(request.POST, instance=request.user)
         profile_form = ProfileChangeForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid() and user_form.is_valid():
