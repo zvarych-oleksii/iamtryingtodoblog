@@ -7,6 +7,14 @@ from django.conf import settings
 
 
 def docx_file_parse(document):
+    """
+    Creating list: lst for values from parsed file
+    Reading text from document by docx module
+    Extend image from document and create dict with value == path to image
+    Updating dicts
+    :param file document: Docx file for parsing
+    :return: dict: With object data
+    """
     lst = []
     for paragraphs in docx.Document(document).paragraphs:
         if paragraphs.text != '':
@@ -16,7 +24,16 @@ def docx_file_parse(document):
     return {**image, **model_info}
 
 
-def extend_image(docx: str, img_dir: str):
+def extend_image(docx, img_dir):
+    """
+    Unzipping by zipfile module
+    Loop for while wouldn't find image file in list of files
+    Creating name of image by func generate_random_string
+    Creating image in directory and reading it
+    :param file docx: file for extend
+    :param str img_dir: path where to save the image
+    :return: dst_f.name: path to extended image
+    """
     zipf = zipfile.ZipFile(docx)
     filelist = zipf.namelist()
     for fname in filelist:
@@ -26,10 +43,9 @@ def extend_image(docx: str, img_dir: str):
             dst_fname = os.path.join(img_dir, os.path.basename(img_name))
             with open(dst_fname, "wb") as dst_f:
                 dst_f.write(zipf.read(fname))
-            return dst_f.name
             break
     zipf.close()
-    pass
+    return dst_f.name
 
 
 def generate_random_string(length: int) -> str:
