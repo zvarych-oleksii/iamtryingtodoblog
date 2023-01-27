@@ -28,7 +28,7 @@ class ProfileChangeDetail(FormMixin, DetailView):
         user_form = ChangeUserForm(request.POST, instance=request.user)
         profile_form = ProfileChangeForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid() and user_form.is_valid():
-            user_form.save(commit=False)
+            user_form.save(commit=False) #commit=False don't save info in database
             profile_form.save(commit=False)
         else:
             print("FormIsInvalid")
