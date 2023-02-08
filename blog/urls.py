@@ -10,7 +10,9 @@ urlpatterns = [
     path('post_list/', PostListView.as_view(), name='PostListView'),
     path("", Index, name="Index"),
     path("game_single/<slug:slug>", GameDetailsView, name="game_single"),
-    path("game_list_view/", GameListView.as_view(), name="GameListUrl")
+    path("game_list_view/", GameListView.as_view(), name="GameListUrl"),
+    path("test_creation_form/", BlogCreationView.as_view(), name="BlogCreationView"),
+    path("testing/", file_form , name="FileCreation"),
 ]
 urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
