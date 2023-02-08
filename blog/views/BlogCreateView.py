@@ -5,7 +5,7 @@ from django.core.files.images import ImageFile
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, FormView
 from django.views.generic import DetailView
-from ..apps_new import docx_file_parse
+from ..services import docx_file_parse
 from ..models import Post_written, Category
 from ..forms import *
 from django.shortcuts import render
