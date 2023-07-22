@@ -81,13 +81,9 @@ WSGI_APPLICATION = 'iamtryingtodoblog.wsgi.application'
 
 DATABASES ={
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "newdatabase",
-        "USER" : "BlogUser",
-        "PASSWORD" : "1Dalpinesony",
-        "HOST" : "localhost",
-        "PORT" : "5432",
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'newDb',
+    },
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

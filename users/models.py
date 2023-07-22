@@ -14,8 +14,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
     def get_absolute_url(self):
-        return reverse("Profile-detail", kwargs={"pk":self.pk})
+        return reverse("Profile-detail", kwargs={"pk": self.pk})
+
     def get_initial_date(self):
         initial_data = {
             'first_name': self.first_name,
@@ -26,6 +28,8 @@ class Profile(models.Model):
     class Meta:
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
+
+
 """
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

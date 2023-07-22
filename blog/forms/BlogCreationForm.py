@@ -6,6 +6,7 @@ class BlogCreationForm(forms.ModelForm):
         model = Post_written
         fields = ['title', 'content', 'category', 'image']
 
+
 class FileForm(forms.Form):
     file = forms.FileField()
 
