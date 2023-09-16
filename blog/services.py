@@ -1,11 +1,11 @@
 import os
 import zipfile
-import docx
+
 import random
 import string
 from django.conf import settings
 
-
+'''
 def docx_file_parse(document):
     """
     Creating list: lst for values from parsed file
@@ -58,7 +58,7 @@ def generate_random_string(length: int) -> str:
     rand_string = ''.join(random.choice(letters) for i in range(length))
     return rand_string
 
-
+'''
 """  obj = Post_written()
     obj.title = "Title"
     obj.author = request.user.profile

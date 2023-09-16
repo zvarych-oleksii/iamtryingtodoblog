@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import ProfileDetail, signup, LoginPage, ProfileChangeDetail
+from .views import ProfileDetail,signup, LoginPage, ProfileChangeDetail
 
 from django.urls import path
 

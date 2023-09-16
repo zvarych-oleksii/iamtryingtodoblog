@@ -5,10 +5,11 @@ from django.core.files.images import ImageFile
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, FormView
 from django.views.generic import DetailView
-from ..services import docx_file_parse
 from ..models import Post_written, Category
 from ..forms import *
 from django.shortcuts import render
+
+
 class BlogCreationView(FormView):
     template_name = "creation_pages/post_creation.html"
     form_class = BlogCreationForm
@@ -23,7 +24,7 @@ class BlogCreationView(FormView):
         triger.author = self.request.user.profile
         triger.save()
         return redirect("Index")
-
+'''
 def file_form(request):
     if request.method == "POST":
         form = FileForm(request.POST, request.FILES)
@@ -40,4 +41,4 @@ def file_form(request):
             os.remove(model_info.get("Image"))
             FileForm()
     return render(request, "creation_pages/file_create.html", {"form": FileForm})
-
+'''

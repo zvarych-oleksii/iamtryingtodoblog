@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import DetailView
 from django.views.generic.edit import FormMixin
 
-from .forms import SignUpForm, AuthenticationForm, ProfileChangeForm, ChangeUserForm
+from .forms import SignUpForm , ProfileChangeForm, ChangeUserForm
 from .models import Profile
 from django.contrib.auth import authenticate, login, logout
 
