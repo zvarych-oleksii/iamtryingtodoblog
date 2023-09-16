@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 from django.core.files.images import ImageFile
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, FormView
@@ -13,17 +12,20 @@ from django.shortcuts import render
 class BlogCreationView(FormView):
     template_name = "creation_pages/post_creation.html"
     form_class = BlogCreationForm
+
     def get_context_data(self, **kwargs):
         context = super(BlogCreationView, self).get_context_data(**kwargs)
         context.update({
             'form': BlogCreationForm()
         })
         return context
+    
     def form_valid(self, form):
         triger = form.save(commit=False)
         triger.author = self.request.user.profile
         triger.save()
         return redirect("Index")
+
 '''
 def file_form(request):
     if request.method == "POST":
@@ -41,4 +43,7 @@ def file_form(request):
             os.remove(model_info.get("Image"))
             FileForm()
     return render(request, "creation_pages/file_create.html", {"form": FileForm})
+
 '''
+
+

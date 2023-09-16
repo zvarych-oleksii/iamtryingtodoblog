@@ -1,6 +1,7 @@
 from django.views.generic import DetailView
 from ..models import Post_written
 
+
 class PostDetailView(DetailView):
     model = Post_written
     slug_url_kwarg = "slug"
@@ -11,3 +12,5 @@ class PostDetailView(DetailView):
         obj.views = obj.views + 1
         obj.save
         return obj
+
+

@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-
 from ..models import *
+
+
 '''class Index(ListView):
     model = Game
     template_name = 'index/index.html'
     context_object_name = 'games'''
+
 def Index(request):
     context = {
         "subcategory":SubCategory.all_subcategories.all(),
@@ -15,3 +17,5 @@ def Index(request):
         "head_posts":Post_written.all_posts.all().order_by("title")[0:3],
     }
     return render(request, "index/index.html", context)
+
+

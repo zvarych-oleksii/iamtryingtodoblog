@@ -2,16 +2,18 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
 from django.views.generic.edit import FormMixin
-
 from .forms import SignUpForm , ProfileChangeForm, ChangeUserForm
 from .models import Profile
 from django.contrib.auth import authenticate, login, logout
+
 
 class ProfileDetail(DetailView):
     model = Profile
     pk_url_kwarg = "pk"
     template_name = "profiles/user_detail.html"
     context_object_name = "profile"
+
+
 class ProfileChangeDetail(FormMixin, DetailView):
     model = Profile
     pk_url_kwarg = "pk"
@@ -24,6 +26,7 @@ class ProfileChangeDetail(FormMixin, DetailView):
                                                              'email': self.request.user.email}),
                         "form_profile": ProfileChangeForm(initial=self.request.user.profile.get_initial_date())})
         return context
+
     def post(self, request, *args, **kwargs):
         user_form = ChangeUserForm(request.POST, instance=request.user)
         profile_form = ProfileChangeForm(request.POST, request.FILES, instance=request.user.profile)
@@ -33,7 +36,6 @@ class ProfileChangeDetail(FormMixin, DetailView):
         else:
             print("FormIsInvalid")
         return redirect("Index")
-
 
 
 def LoginPage(request):
@@ -48,6 +50,7 @@ def LoginPage(request):
         return render(request, "accounts/login.html", context={})
     else:
         return redirect("Index")
+
 
 def signup(request):
     if not request.user.is_authenticated:
@@ -69,3 +72,4 @@ def signup(request):
         return render(request, "accounts/signup.html", context={"form": SignUpForm()})
     else:
         return redirect("Index")
+
