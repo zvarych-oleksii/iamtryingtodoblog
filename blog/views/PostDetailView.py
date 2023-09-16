@@ -1,9 +1,9 @@
 from django.views.generic import DetailView
-from ..models import Post_written
+from ..models import posts
 
 
 class PostDetailView(DetailView):
-    model = Post_written
+    model = posts.Post_written
     slug_url_kwarg = "slug"
     template_name = "detail/post_detail_view.html"
     context_object_name = "detail_post"

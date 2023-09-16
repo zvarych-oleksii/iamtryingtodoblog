@@ -1,4 +1,4 @@
-from django.views.generic import DetailView
+'''from django.views.generic import DetailView
 from ..models import *
 from django.shortcuts import render
 
@@ -29,4 +29,4 @@ def GameDetailsView(request, slug):
         game_details.views.add(GameViews.objects.get(IPAddres=ip))
     return render(request, "detail/game-single.html", context={"game": game_details})
 
-
+'''

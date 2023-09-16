@@ -1,14 +1,14 @@
 import datetime
 from django.db import models
 from django.utils.text import slugify
-from blog.models import Category, SubCategory
+from blog.models import categories
 from users.models import Profile
 
 
 class Post_written(models.Model):
     title = models.CharField(max_length=40, blank=False, verbose_name="Name of post")
     content = models.TextField(blank=False, verbose_name="Content of post", default="Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum labore suspendisse ultrices gravida....")
-    category = models.ManyToManyField(Category, blank=False)
+    category = models.ManyToManyField(categories.Category, blank=False)
     image = models.ImageField(blank=True)
     date = models.DateField(default=datetime.date.today)
     slug = models.SlugField(blank=True)

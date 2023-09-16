@@ -1,9 +1,9 @@
 from django.views.generic import ListView
-from ..models import Post_written, Game, Category
+from ..models import posts  
 
 
 class PostListView(ListView):
-    model = Post_written
+    model = posts.Post_written
     template_name = "lists/post_list_view.html"
     context_object_name = "list_of_posts"
 

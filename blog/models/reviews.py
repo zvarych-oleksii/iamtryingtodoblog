@@ -1,6 +1,5 @@
 from django.db import models
-
-from blog.models import Post_written
+from blog.models import posts
 
 
 class Reviews(models.Model):
@@ -11,7 +10,7 @@ class Reviews(models.Model):
         'self', verbose_name='parent', on_delete=models.SET_NULL, blank=True, null=True
     )
     post = models.ForeignKey(
-        Post_written, on_delete=models.CASCADE, verbose_name="Post"
+        posts.Post_written, on_delete=models.CASCADE, verbose_name="Post"
                              )
     def __str__(self):
         return f"{self.name} - {self.post}"

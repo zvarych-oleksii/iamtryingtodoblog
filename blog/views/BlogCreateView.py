@@ -4,7 +4,7 @@ from django.core.files.images import ImageFile
 from django.shortcuts import redirect
 from django.views.generic import TemplateView, FormView
 from django.views.generic import DetailView
-from ..models import Post_written, Category
+from ..models import posts, categories
 from ..forms import *
 from django.shortcuts import render
 

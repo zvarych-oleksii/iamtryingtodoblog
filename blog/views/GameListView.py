@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+'''from django.views.generic import ListView
 from ..models import *
 
 
@@ -17,4 +17,4 @@ class GameListView(ListView):
     def get_queryset(self):
         return Game.all_list.order_by("title_of_game")
 
-
+'''

@@ -1,4 +1,4 @@
-import datetime
+'''import datetime
 from django.db import models
 from django.utils.text import slugify
 from blog.models import SubCategory
@@ -42,4 +42,4 @@ class Game(models.Model):
     
     @staticmethod
     def get_games_by_id(ids):
-        return Game.all_list.filter(id_in=ids)
+        return Game.all_list.filter(id_in=ids)'''

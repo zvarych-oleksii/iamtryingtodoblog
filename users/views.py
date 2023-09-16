@@ -23,7 +23,7 @@ class ProfileChangeDetail(FormMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProfileChangeDetail, self).get_context_data(**kwargs)
         context.update({"form_user": ChangeUserForm(initial={'username': self.request.user.username,
-                                                             'email': self.request.user.email}),
+                        'email': self.request.user.email}),
                         "form_profile": ProfileChangeForm(initial=self.request.user.profile.get_initial_date())})
         return context
 

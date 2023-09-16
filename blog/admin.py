@@ -1,17 +1,12 @@
 from django.contrib import admin
+from .models import posts
+from .models import categories
+from .models import reviews
+from .models import raiting
 
-from .models import Post_written
-from .models import Category, SubCategory
-from .models import Reviews
-from .models import Rating
-from .models import RatingStar
-from .models import Game, GameViews
-
-admin.site.register(Post_written)
-admin.site.register(Category)
-admin.site.register(Reviews)
-admin.site.register(Rating)
-admin.site.register(RatingStar)
-admin.site.register(SubCategory)
-admin.site.register(Game)
-admin.site.register(GameViews)
+admin.site.register(posts.Post_written)
+admin.site.register(categories.Category)
+admin.site.register(reviews.Reviews)
+admin.site.register(raiting.Rating)
+admin.site.register(raiting.RatingStar)
+admin.site.register(categories.SubCategory)
