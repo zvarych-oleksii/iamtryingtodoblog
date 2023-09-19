@@ -18,6 +18,7 @@ class Category(models.Model):
         return Category.all_categories.filter(id_in=ids)
 
 
+'''
 class SubCategory(models.Model):
     name = models.CharField(max_length=40, blank=False, verbose_name="Name of subcategory:")
     all_subcategories = models.Manager()
@@ -27,4 +28,4 @@ class SubCategory(models.Model):
     
     @staticmethod
     def get_subcategory_by_id(ids):
-        return SubCategory.all_subcategories.filter(id_in=ids)
+        return SubCategory.all_subcategories.filter(id_in=ids)'''

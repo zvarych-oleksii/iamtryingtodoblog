@@ -10,12 +10,10 @@ from ..models import *
 
 def Index(request):
     context = {
-        "subcategory":SubCategory.all_subcategories.all(),
-        "category":Category.all_categories.all(),
-        "games":Game.all_list.all().order_by("-created")[0:3],
-        "posts":Post_written.all_posts.all().order_by("views")[0:4],
-        "head_posts":Post_written.all_posts.all().order_by("title")[0:3],
+        "category":categories.Category.all_categories.all(),
+#        "games":Game.all_list.all().order_by("-created")[0:3],
+        "posts":posts.Post_written.all_posts.all().order_by("views")[0:],
     }
-    return render(request, "index/index.html", context)
+    return render(request, "index.html", context)
 
 

@@ -1,0 +1,11 @@
+ <!DOCTYPE html>
+<html>
+<body>
+  <h1>List of Posts</h1>
+     <ul>
+  {% for post in list_of_posts %}
+       <li><a href="{% url 'PostDetailView' slug=post.slug %}"> {{ post.title }}</a></li>
+  {% endfor %}
+     </ul> 
+</body>
+</html> 
